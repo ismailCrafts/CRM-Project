@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h3 class="mb-4">Search Results for "{{ query }}"</h3>
+
+{% if results %}
+  <div class="container">
+    {% for customer_record in results %}
+      <!-- Card for each customer record -->
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+           
+          <!-- Image Section: Shows customer image or default if none -->
+          <div class="col-md-4" style="height: 100%; overflow: hidden;">
+            {% if customer_record.image %}
+              <img src="{{ customer_record.image.url }}" alt="Customer Image" 
+                   class="img-fluid rounded-start" 
+                   style="height: 100%; width: 100%; object-fit: cover;">
+            {% else %}
+              <img src="{% static 'default/user_profile.jpg' %}" alt="No Image Available" 
+                   class="img-fluid rounded-start" 
+                   style="height: 100%; width: 100%; object-fit: cover;">
+            {% endif %}
+          </div>
+
+          <!-- Info Section: Displays customer details -->
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="card-title">{{ customer_record.first_name }} {{ customer_record.last_name }}</h4>
+              <p class="card-text"><strong>Email:</strong> {{ customer_record.email }}</p>
+              <p class="card-text"><strong>Phone:</strong> {{ customer_record.phone }}</p>
+              <p class="card-text"><strong>Address:</strong> {{ customer_record.address }}</p>
+              <p class="card-text"><strong>City:</strong> {{ customer_record.city }}</p>
+              <p class="card-text"><strong>About:</strong> {{ customer_record.customer_info }}</p>
+              <p class="card-text">
+                <small class="text-muted">
+                  Created at: {{ customer_record.created_at|date:"F j, Y, g:i a" }}
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons: Navigation and record management -->
+      <div class="p-3 d-flex gap-2" style="margin-left: 13%;">
+        <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">Back</a>
+        <a href="{% url 'update' customer_record.id %}" class="btn btn-success btn-sm">Update</a>
+        <a href="{% url 'delete' customer_record.id %}" class="btn btn-danger btn-sm">Delete</a>
+      </div> 
+    {% endfor %}
+  </div>
+{% else %}
+  <!-- Message displayed if no search results found -->
+  <p>No results found.</p>
+{% endif %}
+
+{% endblock %}

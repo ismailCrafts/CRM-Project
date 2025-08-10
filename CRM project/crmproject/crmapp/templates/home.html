@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+{% if user.is_authenticated %}
+
+<div class="mt-0 mx-4">
+  <!-- margin on all sides -->
+  <table class="table table-sm table-striped table-hover table-bordered" style="font-size: 1rem;">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">Customer Info</th>
+        <th scope="col">Created At</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if customers %}
+        {% for record in customers %}
+          <tr style="font-size: 0.85rem;">
+            <td>{{ record.first_name }} {{ record.last_name }}</td>
+            <td>{{ record.email }}</td>
+            <td>{{ record.phone }}</td>
+            <td>{{ record.address }}</td>
+            <td>{{ record.city }}</td>
+            <td>{{ record.customer_info }}</td>
+            <td>{{ record.created_at }}</td>
+            <td> <a href="{% url 'record' record.id %}"> {{ record.id }} </a> </td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+
+{% else %}
+<div class="d-flex justify-content-center align-items-center" 
+     style="min-height: calc(65vh - 56px); position: fixed; top: 56px; left: 0; width: 100%; height: calc(94.8vh - 56px);">
+  <div class="container" style="max-width: 350px;">
+    <h4 class="mb-3 text-center">Please login first.</h4>
+    <form action="{% url 'home' %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-2">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control form-control-sm" name="username" placeholder="username" required>
+      </div>
+      <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control form-control-sm" name="password" placeholder="password" required>
+      </div>
+      <button type="submit" class="btn btn-secondary btn-sm w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

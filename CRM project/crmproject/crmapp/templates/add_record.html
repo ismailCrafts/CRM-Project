@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container py-4" style="max-width: 480px;">
+  <h3 class="mb-3 text-center">Add Customer Record</h3>
+  
+  <!-- Message block (optional) -->
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+  <form action="{% url 'add_record' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="mb-2">
+      <label for="first_name" class="form-label small">First Name</label>
+      <input type="text" class="form-control form-control-sm" id="first_name" name="first_name" required>
+    </div>
+
+    <div class="mb-2">
+      <label for="last_name" class="form-label small">Last Name</label>
+      <input type="text" class="form-control form-control-sm" id="last_name" name="last_name" required>
+    </div>
+
+    <div class="mb-2">
+      <label for="email" class="form-label small">Email</label>
+      <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+    </div>
+
+    <div class="mb-2">
+      <label for="phone" class="form-label small">Phone</label>
+      <input type="text" class="form-control form-control-sm" id="phone" name="phone">
+    </div>
+
+    <div class="mb-2">
+      <label for="address" class="form-label small">Address</label>
+      <input type="text" class="form-control form-control-sm" id="address" name="address">
+    </div>
+
+    <div class="mb-2">
+      <label for="city" class="form-label small">City</label>
+      <input type="text" class="form-control form-control-sm" id="city" name="city">
+    </div>
+
+    <div class="mb-2">
+      <label for="customer_info" class="form-label small">About Customer</label>
+      <textarea class="form-control form-control-sm" id="customer_info" name="customer_info" rows="2"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label small">Image</label>
+      <input type="file" class="form-control form-control-sm" id="image" name="image" accept="image/*">
+    </div>
+
+    <button type="submit" class="btn btn-secondary btn-sm w-100">Add Record</button>
+  </form>
+</div>
+
+{% endblock %}
