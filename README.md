@@ -164,11 +164,84 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'Uploads')
 6. Search customers using the search bar.
 
 
+---
+
+
+## Screenshots
+
+1. CRM login Page
+   ![Screenshot of the project's user login page](images/crm_login.png)
+
+2. CRM Registration Page
+    ![Screenshot of the project's user registration page](images/crm_register.png)
+
+3. CRM Home Page After Login or Registration
+   ![Screenshot of the project's user home page](images/crm_home.png)
+
+4. CRM Home Page Without Any Messages 
+   ![Screenshot of the project's user home page](images/crm_home_without_message.png)
+
+5. CRM Individual Page
+   ![Screenshot of the project's individual page](images/crm_individual_mine.png)
+
+6. CRM Individual Page
+   ![Screenshot of the project's individual page](images/crm_individual.png)
+
+7.  CRM Individual Page
+   ![Screenshot of the project's individual page](images/crm_individual2.png)
+
+8. CRM Individual Page
+   ![Screenshot of the project's individual page](images/crm_individual3.png)
+
+9.  CRM Individual Page
+   ![Screenshot of the project's individual page](images/crm_individual4.png)
+
+10. CRM Search Functionality
+    ![Screenshot of the project's user searching by name or email](images/crm_search1.png)
+
+11. CRM Search Functionality
+    ![Screenshot of the project's user searching by name or email](images/crm_search2.png)
+
+12. CRM Add Customer Record
+    ![Screenshot of the project's add new customer record](images/crm_add.png)
+
+13. CRM Update Customer Record
+    ![Screenshot of the project's Update Customer Record](images/crm_update1.png)
+
+14. CRM Delete Customer Record
+    ![Screenshot of the project's Delete Customer Record](images/crm_delete.png)
 
 
 
+---
 
+## Contributing
 
+We welcome contributions from everyone! Whether it's fixing bugs, improving documentation, or adding new features, your help is appreciated.
+
+---
+
+# MIT License
+
+Copyright (c) 2025 MD ISMAIL BHUYAN
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 
